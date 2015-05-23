@@ -7,7 +7,7 @@ angular.module('client.overview.directives', []).
 	// Slider
 	directive('slider', ['$timeout', 'loanFactory', 'myjarConfig', function($timeout, loanFactory, myjarConfig) {
 
-		var isMobile = myjarConfig.mobile
+		var isMobile = myjarConfig.mobile;
 									
 		var poundSlider = [
 			'<h2 class="large" ng-class="{\'pb0\': CLisMin == true && isMobile, \'pb25 pt45\': CLisMin == true && !isMobile }">£[[sliderPoundValue]]</h2>',
@@ -64,7 +64,7 @@ angular.module('client.overview.directives', []).
 						$('input', element).rangeslider('update');
 						$scope.sliderValue[attrs.slider] = newValue;
 					}					
-				}
+				};
 
 				$scope.increaseValue = function(amount, inactive) {
 					if(inactive) return false;
@@ -72,7 +72,7 @@ angular.module('client.overview.directives', []).
 					$('input', element).val(newValue).change();
 					$('input', element).rangeslider('update');
 					if(newValue <= maximumValue) $scope.sliderValue[attrs.slider] = newValue;
-				}
+				};
 
 				if(attrs.slider == 'day') {
 					$('input', element).attr('min', minimumValue);

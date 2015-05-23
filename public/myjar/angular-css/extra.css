@@ -1,0 +1,54 @@
+.request-body,
+.request-body-tabs li.active {
+    box-shadow: 0px -2px 2px 1px rgba(0,0,0,0.2);
+}
+
+.request-body-tabs {
+    padding: 0;
+    position: relative;
+    top: 3px;
+
+}
+
+.request-body-tabs li {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    border: 3px solid #fff;
+    border-bottom: none;
+    padding: 5px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    margin: 0 5px;
+}
+
+.request-body-tabs li[data-tab="1"] {
+    background-color: #96d2f0;
+}
+
+.request-body-tabs li[data-tab="2"] {
+    background-color: #f07c6a;
+}
+
+.request-body-tabs li[data-tab="3"] {
+    background-color: #bff06e;
+}
+
+.request-body-tabs li:not(.active) .shadow{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 3px solid #fff;
+}
+
+@media screen and (max-width: 991px){
+    .request-body-tabs {
+        text-align: center;
+    }
+    .request-body-tabs li .extra {
+        display: none;
+    }
+}

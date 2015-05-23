@@ -5,13 +5,20 @@
 				<div class="request-header text-center" style="text-align: center">
 					<h1>Borrow for up to 3 months</h1>
 					<p>Repay monthly on your pay day or earlier if it suits you</p>
-					<p>Rate <strong>0.8%</strong> per day</p>
+					<p>Rate <strong>[[getInterest('interest')]]%</strong> per day</p>
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<div class="request-body">
+				<ul class="request-body-tabs">
+					<li style="[[getTabColorStyle(tab)]]"
+						ng-repeat="tab in tabs"
+						ng:click="selectTab($index)"
+						ng-class="{active: isSelectedTab($index)}"
+					><div class="shadow"></div>[[tab.name]]<span class="extra">&nbsp;-&nbsp;[[tab.interest]]%&nbsp;per&nbsp;day</span></li>
+				</ul>
+				<div class="request-body" style="[[getTabColorStyle()]]">
 					<div class="row">
 						<div class="col-md-6">
 							<!-- Vantage request left body -->

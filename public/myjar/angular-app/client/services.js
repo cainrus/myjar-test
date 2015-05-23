@@ -24,6 +24,12 @@ angular.module('client.services', []).
 					data: data
 				});
 			},
+			requestProducts: function(data) {
+				return $http({
+					mehtod: 'get',
+					url: "api/v1/products/list"
+				});
+			},
 			setLoanData: function(data) {
 				loanData.requestInfo = data;
 			},
