@@ -4,14 +4,6 @@
 
 angular.module('client.overview.controllers', []).
 
-    //
-    //controller('ClientOverviewTabsController',
-    //['$scope', 'loanFactory', function($scope, loanFactory){
-    //
-    //
-    //
-    //}]).
-
     controller('ClientOverviewController',
     ['$scope', '$rootScope', 'loanFactory', 'ModalService', function ($scope, $rootScope, loanFactory, ModalService) {
 
@@ -107,8 +99,6 @@ angular.module('client.overview.controllers', []).
                 });
             });
         };
-
-        //$scope.openRequestConfirmModal();
 
         loanFactory.requestProducts().then(function(response){
             $scope.tabs=response.data.result;
